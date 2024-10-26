@@ -12,6 +12,7 @@ public class LoginScreenController : MonoBehaviour
     public TMP_InputField txtSenha;
     private IEnumerator coroutine;
 
+
     public void Login()
     {
         var login = new LoginRequest
@@ -22,6 +23,11 @@ public class LoginScreenController : MonoBehaviour
 
         coroutine = NetworkService.Login(login, txtError);
         StartCoroutine(coroutine);      
+    }
+
+    public void CriarConta()
+    {
+        SceneManager.LoadScene(Resource.Screen.CreateAccount);
     }
 }
 
